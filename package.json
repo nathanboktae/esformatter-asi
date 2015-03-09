@@ -1,0 +1,30 @@
+{
+  "name": "esformatter-semicolons",
+  "version": "0.5.0",
+  "description": "esformatter plugin for adding missing and removing unnecessary semicolons",
+  "keywords": [
+    "esformatter",
+    "plugin",
+    "asi",
+    "semicolons"
+  ],
+  "author": {
+    "name": "Nathan Black",
+    "email": "nathan@nathanblack.org",
+    "url": "http://nathanblack.org"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanboktae/esformatter-asi"
+  },
+  "bugs": "https://github.com/nathanboktae/esformatter-asi/issues",
+  "main": "esformatter-asi.js",
+  "scripts": {
+    "test": "mocha test/*-test.js"
+  },
+  "devDependencies": {
+    "esformatter": "latest",
+    "mocha": "^2.2.0"
+  }
+}
