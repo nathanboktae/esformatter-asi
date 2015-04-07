@@ -5,7 +5,7 @@ for (var b = 0; b < 3; b++) {
     if (b == 1 && d == 1) {
       break a // e
     }
-    f(b, d);
+    f(b, d)
   }
   if (b == 2) {
     break

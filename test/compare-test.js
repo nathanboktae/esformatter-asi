@@ -3,7 +3,7 @@ describe('asi', function() {
     esformatter = require('esformatter'),
     asi = require('../'),
     fs = require('fs'),
-    expect = require('chai'),
+    expect = require('chai').expect,
 
     source = function(file) {
       return fs.readFileSync(__dirname + '/fixtures/' + file).toString()

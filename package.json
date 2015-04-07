@@ -24,6 +24,7 @@
     "test": "mocha test/*-test.js"
   },
   "devDependencies": {
+    "chai": "^2.1.2",
     "esformatter": "latest",
     "mocha": "^2.2.0"
   }

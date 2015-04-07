@@ -11,16 +11,18 @@ function isSemicolon(token) {
 }
 
 exports.nodeAfter = function(node) {
-  if (~['ExpressionStatement', 'VariableDeclaration', 'ReturnStatement','ContinueStatement', 'BreakStatement'].indexOf(node.type) &&
+  if (~['ExpressionStatement', 'VariableDeclaration', 'ReturnStatement', 'ContinueStatement', 'BreakStatement'].indexOf(node.type) &&
       isSemicolon(node.endToken)) {
     var tokenItr = node.endToken.next,
-        semicolonToken = node.endToken
+        semicolonToken = node.endToken,
+        blockCommentHadLineBreak = false
 
     while (isWhitespace(tokenItr) || isComment(tokenItr)) {
       tokenItr = tokenItr.next
+      blockCommentHadLineBreak = blockCommentHadLineBreak || tokenItr.type === 'BlockComment' && tokenItr.value && tokenItr.value.indexOf('\n') >= 0
     }
 
-    if (tokenItr.type === 'LineBreak') {
+    if (tokenItr.type === 'LineBreak' || blockCommentHadLineBreak) {
       var lineBreakToken = tokenItr
       if (node.next && node.next.type === 'ExpressionStatement') {
         tokenItr = node.next.startToken
@@ -30,6 +32,7 @@ exports.nodeAfter = function(node) {
 
         if (tokenItr && tokenItr.type === 'Punctuator' && ~['[', '(', '+', '*', '/', '-', ',', '.'].indexOf(tokenItr.value)) {
           // ASI doesn't apply to this line as removing the semicolon would cause the lines to combine to one expression
+          console.log('ASI did not apply due to: ' + tokenItr.value)
           return
         }
       }
