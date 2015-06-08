@@ -4,6 +4,7 @@
   "description": "Esformatter plugin to automatically remove semicolons that would be inserted by ASI rules.",
   "keywords": [
     "esformatter",
+    "esformatter-plugin",
     "plugin",
     "asi",
     "semicolons"
