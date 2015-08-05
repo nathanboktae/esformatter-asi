@@ -1,6 +1,6 @@
 # esformatter-asi
 
-An [esformatter][esformatter] plugin for removing unnecessary semicolons that will be inserted by JavaScript's automatic semicolon insertion.
+An [esformatter](https://github.com/millermedeiros/esformatter) plugin for removing unnecessary semicolons that will be inserted by JavaScript's automatic semicolon insertion.
 
 [![Build Status](https://travis-ci.org/nathanboktae/esformatter-asi.svg?branch=master)](https://travis-ci.org/nathanboktae/esformatter-asi)
 
