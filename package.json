@@ -1,6 +1,6 @@
 {
   "name": "esformatter-asi",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Esformatter plugin to automatically remove semicolons that would be inserted by ASI rules.",
   "keywords": [
     "esformatter",
