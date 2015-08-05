@@ -22,7 +22,7 @@ exports.nodeAfter = function(node) {
       blockCommentHadLineBreak = blockCommentHadLineBreak || tokenItr.type === 'BlockComment' && tokenItr.value && tokenItr.value.indexOf('\n') >= 0
     }
 
-    if (tokenItr.type === 'LineBreak' || blockCommentHadLineBreak) {
+    if (!tokenItr || tokenItr.type === 'LineBreak' || blockCommentHadLineBreak || (tokenItr.type === 'Punctuator' && tokenItr.value === '}')) {
       var lineBreakToken = tokenItr
       if (node.next && node.next.type === 'ExpressionStatement') {
         tokenItr = node.next.startToken

@@ -37,5 +37,13 @@ describe('asi', function() {
     it('should be removed from continue statements', function() {
       check('continue-statement')
     })
+
+    it('should remove semicolons at the end of a file', function() {
+      check('end-of-file')
+    })
+
+    it('should remove semicolons from the last statement in a one-line function', function() {
+      check('one-line-function')
+    })
   })
 })
