@@ -32,7 +32,6 @@ exports.nodeAfter = function(node) {
 
         if (tokenItr && tokenItr.type === 'Punctuator' && ~['[', '(', '+', '*', '/', '-', ',', '.'].indexOf(tokenItr.value)) {
           // ASI doesn't apply to this line as removing the semicolon would cause the lines to combine to one expression
-          console.log('ASI did not apply due to: ' + tokenItr.value)
           return
         }
       }
